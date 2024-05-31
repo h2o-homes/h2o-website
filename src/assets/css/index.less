@@ -1,42 +1,44 @@
 @import '~ant-design-vue/dist/antd.less';
-@import "./antd.less";
-@import "./ant.less";
-@import "./style.less";
+@import './font.less';
+@import './antd.less';
+@import './reset.less';
+@import './ant.less';
+@import './style.less';
+@import './animate.less';
 
-@nav-height: 100px;
 .container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
 }
-@media (max-width: 576px) {
-  .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+@media (max-width: 575px) {
+    .container {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
 }
 @media (min-width: 576px) {
-  .container {
-    width: 540px;
-  }
+    .container {
+        width: 540px;
+    }
 }
 @media (min-width: 768px) {
-  .container {
-    width: 740px;
-  }
+    .container {
+        width: 740px;
+    }
 }
 @media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
+    .container {
+        width: 970px;
+    }
 }
-@media (min-width: 1200px) {
-  .container {
-    width: 1200px;
-  }
+@media (min-width: 1280px) {
+    .container {
+        width: 1280px;
+    }
 }
 @media (min-width: 1800px) {
-  .container {
-    width: 1350px;
-  }
+    .container {
+        width: 1350px;
+    }
 }

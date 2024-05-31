@@ -1,13 +1,3 @@
-import devConfig from './dev.config'
-import prodConfig from './prod.config'
+const { setting, theme, network } = require('./default')
 
-const isProd = process.env.NODE_ENV === 'production'
-let networkConfig = devConfig
-
-// if (isProd) {
-//     networkConfig = prodConfig
-// }
-
-export {
-    networkConfig
-}
+module.exports = Object.assign({}, setting, theme, network)

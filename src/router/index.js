@@ -1,51 +1,97 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Layout from '@/layout/index.vue'
-import Home from '../views/Home.vue'
-import RoadMap from '../views/RoadMap.vue'
-import Airdrop from '../views/Airdrop.vue'
-import Tokenomics from '../views/Tokenomics.vue'
+import Layout from '@/layout'
+import Index from '@/views/index/index.vue'
+import Benefits from '@/views/benefits/index.vue'
+import Explore from '@/views/explore/index.vue'
+import News from '@/views/news/index.vue'
+import Community from '@/views/community/index.vue'
 
-const routes = [
-  {
-    path: '/',
-    component: Layout,
-    children: [
-      {
-        path: '',
-        redirect:'home',
-        meta: {}
-      },
-      {
-        path: 'home',
-        name: 'Home',
-        component: Home,
-        meta: {}
-      },
-      {
-        path: 'roadmap',
-        name: 'RoadMap',
-        component: RoadMap,
-        meta: {}
-      },
-      {
-        path: 'airdrop',
-        name: 'Airdrop',
-        component: Airdrop,
-        meta: {}
-      },
-      {
-        path: 'tokenomics',
-        name: 'Tokenomics',
-        component: Tokenomics,
-        meta: {}
-      }
-    ]
-  },
+export const asyncRoutes = [
+    {
+        path: '/',
+        redirect: '/index'
+    },
+    {
+        path: '/home',
+        redirect: '/index'
+    },
+    {
+        path: '/index',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'Index',
+                component: Index,
+                meta: {
+                    title: 'Index'
+                }
+            }
+        ]
+    },
+    {
+        path: '/benefits',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'Benefits',
+                component: Benefits,
+                meta: {
+                    title: 'Benefits'
+                }
+            }
+        ]
+    },
+    {
+        path: '/explore',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'Explore',
+                component: Explore,
+                meta: {
+                    title: 'Explore'
+                }
+            }
+        ]
+    },
+    {
+        path: '/community',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'Community',
+                component: Community,
+                meta: {
+                    title: 'Community'
+                }
+            }
+        ]
+    },
+    {
+        path: '/news',
+        component: Layout,
+        children: [
+            {
+                path: '',
+                name: 'News',
+                component: News,
+                meta: {
+                    title: 'News'
+                }
+            }
+        ]
+    }
 ]
 
+export const constantRoutes = []
+
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+    history: createWebHistory(),
+    routes: asyncRoutes
 })
 
 export default router
